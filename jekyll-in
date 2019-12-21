@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+
+#  Information --------------------------------------------------------------
+#
+#  Name: Jekyll-In
+#  Version: 0.2-alpha
+#  Author: Guilherme Machado 
+#       <machadofguilherme@gmail.com>
+#
+#  --------------------------------------------------------------------------
+
+
+#  Functions ----------------------------------------------------------------
+
+_INSTALL() {
+    echo "export PATH="${HOME}/.gem/ruby/2.6.0/bin:$PATH" >> $HOME/.zshrc"
+    source $HOME/.zshrc
+    sudo pacman -S ruby base-devel
+    gem update --user-install
+    gem install jekyll --user-install
+}
+
+_VERSION() {
+    printf << EOF
+    
+        Jekyll-In | CLI Jekyll Installer for Arch Linux
+        Version: 0.2-alpha
+        Author: Guilherme Machado <machadofguilherme@gmail.com>
+        
+    EOF
+}
+
+#  --------------------------------------------------------------------------
+
+
+#  Main Program -------------------------------------------------------------
+
+case $1 in
+    --install) _INSTALL ;;
+    --version) _VERSION ;;
+esac
+
+#  --------------------------------------------------------------------------
