@@ -22,13 +22,13 @@ _INSTALL() {
 }
 
 _VERSION() {
-    printf << EOF
+    cat << EOF
     
         Jekyll-In | CLI Jekyll Installer for Arch Linux
         Version: 0.2-alpha
         Author: Guilherme Machado <machadofguilherme@gmail.com>
         
-    EOF
+EOF
 }
 
 #  --------------------------------------------------------------------------
